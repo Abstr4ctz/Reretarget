@@ -11,6 +11,7 @@ Reretarget.trackedSpells = {
     ["Feign Death"] = true,
     ["Vanish"] = true,
     ["Stealth"] = true,
+    ["Prowl"] = true,
 }
 
 Reretarget.lastTargetGUID = nil
