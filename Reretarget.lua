@@ -6,12 +6,12 @@ Reretarget.retargetTimeout = 19
 -- Tracked spells (by spell ID or name)
 Reretarget.trackedSpells = {
     [11392] = true,  -- Invisibility Potion
-    [3680] = true,    -- Lesser Invisibility Potion
-    [4079] = true, -- Gnomish Cloaking Device
+    [3680] = true,   -- Lesser Invisibility Potion
+    [4079] = true,   -- Gnomish Cloaking Device
     ["Feign Death"] = true,
     ["Vanish"] = true,
     ["Stealth"] = true,
-    ["Prowl"] = true,
+	["Shadowmeld"] = true,
 }
 
 Reretarget.lastTargetGUID = nil
@@ -53,7 +53,7 @@ function Reretarget:OnUnitCastEvent(casterGUID, _, _, spellID)
 end
 
 function Reretarget:OnTargetChanged()
-    if UnitExists("target") then
+    if UnitExists("target") and UnitCanAttack("player", "target") then
         _, self.lastTargetGUID = UnitExists("target")
     end
 end
